@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes/views/widgets/custom_add_Button.dart';
 import 'package:notes/views/widgets/custom_text_field.dart';
 
 class BottomSheetBody extends StatelessWidget {
@@ -6,14 +7,24 @@ class BottomSheetBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: MediaQuery.of(context).size.height * 0.5,
       width: double.infinity,
-      child: Column(
-        children: [
-          CustomTextField(title: "Tilte", maxLines: 1),
-          CustomTextField(title: "Description", maxLines: 5),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Column(
+          children: [
+            CustomTextField(title: "Tilte", maxLines: 1),
+            Spacer(
+              flex: 1,
+            ),
+            CustomTextField(title: "Description", maxLines: 5),
+            Spacer(
+              flex: 3,
+            ),
+            CustomAddButton(),
+          ],
+        ),
       ),
     );
   }

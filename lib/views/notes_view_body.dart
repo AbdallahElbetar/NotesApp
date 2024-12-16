@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes/views/widgets/notes_item.dart';
 
 class NotesViewBody extends StatelessWidget {
   const NotesViewBody({super.key});
@@ -13,9 +14,12 @@ class NotesViewBody extends StatelessWidget {
         ),
         actions: [IconButton(onPressed: () {}, icon: Icon(Icons.search))],
       ),
-      // body: ListView.builder(
-      //   itemBuilder: (context, index) {},
-      // ),
+      body: ListView.builder(
+        itemCount: 10,
+        itemBuilder: (context, index) {
+          return NotesItem();
+        },
+      ),
     );
   }
 }

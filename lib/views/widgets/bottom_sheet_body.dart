@@ -12,17 +12,20 @@ class BottomSheetBody extends StatelessWidget {
       width: double.infinity,
       child: Padding(
         padding: const EdgeInsets.all(15.0),
-        child: Column(
+        child: ListView(
+          physics: BouncingScrollPhysics(),
           children: [
             CustomTextField(title: "Tilte", maxLines: 1),
-            Spacer(
-              flex: 1,
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.03,
             ),
             CustomTextField(title: "Description", maxLines: 5),
-            Spacer(
-              flex: 3,
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.07,
             ),
-            CustomAddButton(),
+            CustomAddButton(
+              onTap: () {},
+            ),
           ],
         ),
       ),
